@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, ActivityIndicator, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, StyleSheet, LayoutAnimation, Platform, UIManager, SafeAreaView } from 'react-native';
 import { getAllProducts } from '../api/productService';
 import ProductCard from '../components/ProductCard';
 import { useNavigation } from '@react-navigation/native';
@@ -69,6 +69,7 @@ const onRefresh = async () => {
   if (loading) return <Shimmer />;
 
   return (
+    <SafeAreaView style={{ flex: 1 }}>
     <FlatList
   data={products}
   keyExtractor={(item) => item.id.toString()}
@@ -93,19 +94,19 @@ const onRefresh = async () => {
 
   )}
 />
+</SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
  container: {
-    paddingHorizontal: 816,
+    paddingHorizontal: 8,
     paddingTop: 8,
-    paddingBottom: 100,
-    backgroundColor:colors.background,
+    backgroundColor:colors.border,
   },
   row: {
     justifyContent: 'space-between',
-    marginBottom: 16,
+    marginBottom: 20,
   },
 });
 

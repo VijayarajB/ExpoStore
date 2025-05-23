@@ -9,7 +9,7 @@ export default function App() {
     <NavigationContainer>
       <MainNavigator />
       <Toast />
-      <StatusBar barStyle="dark-content" backgroundColor={colors.statusbar} />
+      <StatusBar barStyle="light-content" />
     </NavigationContainer>
   );
 }
