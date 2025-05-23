@@ -1,11 +1,11 @@
+// navigation/FavouritesStack.tsx
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ProductListScreen from '../screens/ProductListScreen';
-import ProductDetailScreen from '../screens/ProductDetailScreen';
-import colors from '../constants/colors'; // assuming your color constants are here
-
+import FavouritesScreen from '../screens/FavouritesScreen';
+import colors from '../constants/colors';
 const Stack = createNativeStackNavigator();
 
-export default function ProductStack() {
+export default function FavouritesStack() {
     return (
         <Stack.Navigator
             screenOptions={{
@@ -21,21 +21,15 @@ export default function ProductStack() {
                     fontSize: 16,
                 },
                 contentStyle: {
-                    backgroundColor: colors.secondary,
-                    marginBottom: 80
+                    backgroundColor: colors.border,
+                    marginBottom: 50
                 },
             }}
         >
-
             <Stack.Screen
-                name="ProductList"
-                component={ProductListScreen}
-                options={{ title: 'Products List' }}
-            />
-            <Stack.Screen
-                name="ProductDetail"
-                component={ProductDetailScreen}
-                options={{ title: 'Product Details' }}
+                name="FavouritesScreen"
+                component={FavouritesScreen}
+                options={{ title: 'Favourites' }}
             />
         </Stack.Navigator>
     );
